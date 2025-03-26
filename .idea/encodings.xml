@@ -3,5 +3,27 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/jpm-wm-backend/Test/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jpm-wm-backend/Test/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpm-wm-backend/jpm-advisory-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpm-wm-backend/jpm-advisory-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpm-wm-backend/jpm-ai-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpm-wm-backend/jpm-education-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpm-wm-backend/jpm-investment-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpm-wm-backend/jpm-notification-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpm-wm-backend/jpm-report-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpm-wm-backend/jpm-retirement-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpm-wm-backend/jpm-user-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpm-wm-backend/jpm-wealth-mgmt-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpm-wm-backend/kc-auth-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpm-wm-backend/spc-api-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpm-wm-backend/spc-config-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpm-wm-backend/spc-service-registry/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpm-wm-backend/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpm-wm-backend/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpm-wm-backend1/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpm-wm-backend1/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpm-wm1-backend/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpm-wm1-backend/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sample/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sample/src/main/resources" charset="UTF-8" />
   </component>
 </project>

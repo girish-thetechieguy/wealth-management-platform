@@ -6,10 +6,52 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="jpm-notification-service" />
+        <module name="spc-api-gateway" />
+        <module name="spc-config-server" />
+        <module name="jpm-ai-service" />
+        <module name="spc-service-registry" />
+        <module name="jpm-report-service" />
+      </profile>
+      <profile name="Annotation profile for jpm-wm-backend" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="jpm-advisory-service" />
+        <module name="kc-auth-service" />
+        <module name="jpm-retirement-service" />
+        <module name="jpm-education-service" />
+        <module name="jpm-user-service" />
+        <module name="jpm-investment-service" />
+        <module name="jpm-wealth-mgmt-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="jpm-wm-backend1" target="17" />
+      <module name="jpm-wm1-backend" target="17" />
+      <module name="sample" target="17" />
       <module name="Test" target="17" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="jpm-advisory-service" options="-parameters" />
+      <module name="jpm-ai-service" options="-parameters" />
+      <module name="jpm-education-service" options="-parameters" />
+      <module name="jpm-investment-service" options="-parameters" />
+      <module name="jpm-notification-service" options="-parameters" />
+      <module name="jpm-report-service" options="-parameters" />
+      <module name="jpm-retirement-service" options="-parameters" />
+      <module name="jpm-user-service" options="-parameters" />
+      <module name="jpm-wealth-mgmt-service" options="-parameters" />
+      <module name="kc-auth-service" options="-parameters" />
+      <module name="spc-api-gateway" options="-parameters" />
+      <module name="spc-config-server" options="-parameters" />
+      <module name="spc-service-registry" options="-parameters" />
+    </option>
   </component>
 </project>

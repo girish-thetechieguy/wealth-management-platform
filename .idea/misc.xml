@@ -12,11 +12,31 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/Test/pom.xml" />
+        <option value="$PROJECT_DIR$/jpm-wm-backend/spc-service-registry/pom.xml" />
+        <option value="$PROJECT_DIR$/jpm-wm-backend/spc-api-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/jpm-wm-backend/spc-config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/jpm-wm-backend/jpm-ai-service/pom.xml" />
+        <option value="$PROJECT_DIR$/jpm-wm-backend/jpm-report-service/pom.xml" />
+        <option value="$PROJECT_DIR$/jpm-wm-backend/jpm-notification-service/pom.xml" />
+        <option value="$PROJECT_DIR$/jpm-wm-backend/jpm-advisory-service/pom.xml" />
+        <option value="$PROJECT_DIR$/jpm-wm-backend/jpm-wealth-mgmt-service/pom.xml" />
+        <option value="$PROJECT_DIR$/jpm-wm-backend/jpm-retirement-service/pom.xml" />
+        <option value="$PROJECT_DIR$/jpm-wm-backend/jpm-investment-service/pom.xml" />
+        <option value="$PROJECT_DIR$/jpm-wm-backend/jpm-user-service/pom.xml" />
+        <option value="$PROJECT_DIR$/jpm-wm-backend/jpm-education-service/pom.xml" />
+        <option value="$PROJECT_DIR$/jpm-wm-backend/kc-auth-service/pom.xml" />
+        <option value="$PROJECT_DIR$/jpm-wm1-backend/pom.xml" />
+        <option value="$PROJECT_DIR$/jpm-wm-backend1/pom.xml" />
+        <option value="$PROJECT_DIR$/sample/pom.xml" />
+        <option value="$PROJECT_DIR$/jpm-wm-backend/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/jpm-wm-backend/Test/pom.xml" />
+        <option value="$PROJECT_DIR$/jpm-wm-backend1/pom.xml" />
+        <option value="$PROJECT_DIR$/jpm-wm1-backend/pom.xml" />
+        <option value="$PROJECT_DIR$/sample/pom.xml" />
       </set>
     </option>
   </component>
