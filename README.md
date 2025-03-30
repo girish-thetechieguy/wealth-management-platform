@@ -13,7 +13,7 @@ The Investment Banking Platform is a modern, production-ready application design
 ## Project Overview
 This wealth management project allows users to manage their investments, view portfolio performance, and receive insights. The backend is built using Java and Spring, exposing a GraphQL API, while the frontend is developed using React with TypeScript.
 
-## Plan
+## Plan [DONE]
 1. Define project structure and features:
     - User authentication
     - Portfolio management
@@ -22,7 +22,7 @@ This wealth management project allows users to manage their investments, view po
 2. Create wireframes for key pages.
 3. Design the database schema.
 
-## Design
+## Design [DONE]
 - **Wireframes**: Design key interfaces including:
     - Dashboard (Portfolio Overview)
     - Investment Details

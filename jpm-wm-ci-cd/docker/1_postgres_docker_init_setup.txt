@@ -1,0 +1,3 @@
+docker pull postgres
+docker run --name wealth-mgt-dev -e POSTGRES_PASSWORD=wealth-mgt -p 5432:5432 -d postgres
+Db postgres: username : postgres

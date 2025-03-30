@@ -7,21 +7,9 @@
 		<artifactId>jpm-wm-backend</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>jpm-user-service</artifactId>
+	<artifactId>jpm-client-service</artifactId>
 	<description>Demo project for Spring Boot</description>
 	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
 	<properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2024.0.1</spring-cloud.version>

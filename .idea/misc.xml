@@ -29,6 +29,7 @@
         <option value="$PROJECT_DIR$/jpm-wm-backend1/pom.xml" />
         <option value="$PROJECT_DIR$/sample/pom.xml" />
         <option value="$PROJECT_DIR$/jpm-wm-backend/pom.xml" />
+        <option value="$PROJECT_DIR$/jpm-wm-backend/jpm-client-service/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

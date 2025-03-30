@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: jpm-client-service
+  config:
+    import: "optional:configserver:http://localhost:8088"

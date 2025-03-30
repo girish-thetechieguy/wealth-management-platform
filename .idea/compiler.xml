@@ -10,6 +10,7 @@
         <module name="spc-api-gateway" />
         <module name="spc-config-server" />
         <module name="jpm-ai-service" />
+        <module name="jpm-client-service" />
         <module name="spc-service-registry" />
         <module name="jpm-report-service" />
       </profile>
@@ -25,7 +26,6 @@
         <module name="kc-auth-service" />
         <module name="jpm-retirement-service" />
         <module name="jpm-education-service" />
-        <module name="jpm-user-service" />
         <module name="jpm-investment-service" />
         <module name="jpm-wealth-mgmt-service" />
       </profile>
@@ -41,12 +41,12 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="jpm-advisory-service" options="-parameters" />
       <module name="jpm-ai-service" options="-parameters" />
+      <module name="jpm-client-service" options="-parameters" />
       <module name="jpm-education-service" options="-parameters" />
       <module name="jpm-investment-service" options="-parameters" />
       <module name="jpm-notification-service" options="-parameters" />
       <module name="jpm-report-service" options="-parameters" />
       <module name="jpm-retirement-service" options="-parameters" />
-      <module name="jpm-user-service" options="-parameters" />
       <module name="jpm-wealth-mgmt-service" options="-parameters" />
       <module name="kc-auth-service" options="-parameters" />
       <module name="spc-api-gateway" options="-parameters" />
