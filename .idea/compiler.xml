@@ -8,8 +8,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="jpm-notification-service" />
-        <module name="spc-api-gateway" />
         <module name="spc-config-server" />
+        <module name="spc-api-gateway" />
         <module name="jpm-ai-service" />
         <module name="jpm-client-service" />
         <module name="spc-service-registry" />

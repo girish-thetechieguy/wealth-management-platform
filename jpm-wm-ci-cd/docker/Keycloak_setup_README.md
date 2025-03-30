@@ -27,7 +27,7 @@ client - auth : true
 authorization - no
 auth- flow : service acct roles
 Root and home url : http://localhost:9090  --> API gateway
-save client- secret : t002nhbUaT5qq4mxxcQ8ejNLuwLCeoDt
+save client- secret : RUJy67fIKLg1jeWnuUvCJvs6iaRFlQ25
 realm setting -> openId connect config: http://localhost:8080/realms/jpm-wm-realm/.well-known/openid-configuration
 "issuer": "http://localhost:8080/realms/jpm-wm-realm",
 "token_endpoint": "http://localhost:8080/realms/jpm-wm-realm/protocol/openid-connect/token",
