@@ -1,4 +1,4 @@
---For client user and client servive and its scheme
+--For client user and client service and its scheme
 CREATE USER client_db_admin WITH PASSWORD 'client_db_admin';
 GRANT CONNECT ON DATABASE postgres TO client_db_admin;
 CREATE SCHEMA client_schema;
@@ -26,7 +26,7 @@ CREATE TABLE client_schema.client (
     grantEducationAccess BOOLEAN,
     requestWealthMgmt BOOLEAN,
     grantWealthMgmt BOOLEAN,
-    wealthInverstType VARCHAR(16),
+    wealthInvestType VARCHAR(16),
     createdAt date,
     createdBy VARCHAR(128) NOT NULL,
     updatedAt date,

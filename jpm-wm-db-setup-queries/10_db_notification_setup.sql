@@ -9,10 +9,3 @@ GRANT SELECT, INSERT, UPDATE ON ALL TABLES IN SCHEMA notification_schema TO noti
 ALTER DEFAULT PRIVILEGES IN SCHEMA notification_schema GRANT SELECT, INSERT, UPDATE ON TABLES TO notification_db_admin;
 
 
-CREATE TABLE notification_schema.login_audit (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    userId VARCHAR(256) NOT NULL,
-    password VARCHAR(256) NOT NULL,
-    logintime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    result VARCHAR(32) NOT NULL
-);

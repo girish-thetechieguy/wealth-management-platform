@@ -7,12 +7,3 @@ GRANT USAGE ON SCHEMA ai_schema TO ai_db_admin;
 GRANT SELECT, INSERT, UPDATE ON ALL TABLES IN SCHEMA ai_schema TO ai_db_admin;
 
 ALTER DEFAULT PRIVILEGES IN SCHEMA ai_schema GRANT SELECT, INSERT, UPDATE ON TABLES TO ai_db_admin;
-
-
-CREATE TABLE ai_schema.login_audit (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    userId VARCHAR(256) NOT NULL,
-    password VARCHAR(256) NOT NULL,
-    logintime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    result VARCHAR(32) NOT NULL
-);

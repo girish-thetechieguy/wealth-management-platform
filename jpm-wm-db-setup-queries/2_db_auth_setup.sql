@@ -11,10 +11,12 @@ GRANT SELECT, INSERT, UPDATE ON ALL TABLES IN SCHEMA auth_schema TO auth_db_admi
 ALTER DEFAULT PRIVILEGES IN SCHEMA auth_schema GRANT SELECT, INSERT, UPDATE ON TABLES TO auth_db_admin;
 
 
-CREATE TABLE auth_schema.login_audit (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    userId VARCHAR(256) NOT NULL,
+CREATE SCHEMA IF NOT EXISTS auth_schema;
+
+CREATE TABLE IF NOT EXISTS auth_schema.login_audit (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(256) NOT NULL REFERENCES auth_schema.client(username),  -- Assuming 'client' table exists with 'id' as PK
     password VARCHAR(256) NOT NULL,
-    logintime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    logintime TIMESTAMP NOT NULL,
     status VARCHAR(32) NOT NULL
 );
