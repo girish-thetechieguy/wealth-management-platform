@@ -11,7 +11,8 @@ The Investment Banking Platform is a modern, production-ready application design
 - [Deployment](#deployment)
 
 ## Docker setup
-docker run -p 8080:8080 -e KC_BOOTSTRAP_ADMIN_USERNAME=jpw-wm-admin -e KC_BOOTSTRAP_ADMIN_PASSWORD=jpw-wm-admin quay.io/keycloak/keycloak:26.1.4 start-dev
+docker run -p 8080:8080 -e KC_BOOTSTRAP_ADMIN_USERNAME=jpw-wm-admin -e KC_BOOTSTRAP_ADMIN_PASSWORD=jpw-wm-admin -d quay.io/keycloak/keycloak:26.1.4 start-dev
+Container name : jpw-wm-dev 
 
 ## Create Realm
 Name : jpm-wm-realm
@@ -30,7 +31,7 @@ save client- secret : t002nhbUaT5qq4mxxcQ8ejNLuwLCeoDt
 realm setting -> openId connect config: http://localhost:8080/realms/jpm-wm-realm/.well-known/openid-configuration
 "issuer": "http://localhost:8080/realms/jpm-wm-realm",
 "token_endpoint": "http://localhost:8080/realms/jpm-wm-realm/protocol/openid-connect/token",
-
+![img_1.png](img_1.png)
 
 
 

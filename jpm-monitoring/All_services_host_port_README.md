@@ -4,7 +4,9 @@ The Investment Banking Platform is a modern, production-ready application design
 
 Postgres: http://localhost:5432/postgres
 keycloak: http://localhost:8080
-Api gateway : http://localhost:9090
+Zipkin:  http://localhost:9411/zipkin/
+
+Api gateway : http://localhost:8060
 Service registry : http://localhost:8761
 Client service : jpm-client-service : http://localhost:8081
 Config Server : jpm-client-service : http://localhost:8088

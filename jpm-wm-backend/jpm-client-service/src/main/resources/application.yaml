@@ -3,3 +3,31 @@ spring:
     name: jpm-client-service
   config:
     import: "optional:configserver:http://localhost:8088"
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: wealth-mgt
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10  # Maximum number of connections in the pool
+      minimum-idle: 2         # Minimum number of idle connections in the pool
+      idle-timeout: 30000     # Idle timeout in milliseconds
+      connection-timeout: 30000 # Connection timeout in milliseconds
+      max-lifetime: 1800000    # Maximum lifetime of a connection in milliseconds
+  jpa:
+    hibernate:
+      ddl-auto: update # Options: none, update, create, create-drop
+      show_sql: true           # Show SQL queries in console
+      properties:
+        hibernate:
+          format_sql: true      # Format SQL queries in console
+          use_sql_comments: true # Add comments to SQL queries
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+# Optional: Configuration for logging
+logging:
+  level:
+    org.hibernate.SQL: DEBUG   # Log SQL statements
+    org.hibernate.type.descriptor.sql.BasicTypeRegistry: TRACE  # Log parameter bindings
+
+
