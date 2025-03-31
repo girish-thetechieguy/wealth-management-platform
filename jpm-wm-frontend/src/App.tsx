@@ -1,26 +1,26 @@
-// src/App.tsx
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/common/Header';
-import Footer from './components/common/Footer';
-import Home from './components/Home';
-import Login from './components/Login';
-import Register from './components/Register';
-import Dashboard from './components/Dashboard';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ProfilePage from './pages/Profile';
+import SignInPage from './pages/auth/SignIn';
+import SignUpPage from './pages/auth/SignUp';
+import DashboardPage from './pages/Dashboard';
+
+// Import global CSS
+import './assets/css/nucleo-icons.css';
+import './assets/css/nucleo-svg.css';
+import './assets/css/material-dashboard.css';
 
 const App: React.FC = () => {
-    return (
-        <Router>
-            <Header />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/dashboard" element={<Dashboard />} />
-            </Routes>
-            <Footer />
-        </Router>
-    );
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<DashboardPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/sign-in" element={<SignInPage />} />
+        <Route path="/sign-up" element={<SignUpPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default App;
