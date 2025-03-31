@@ -1,0 +1,38 @@
+type Advisor {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    email: String!
+    phone: String!
+    specializations: [String!]!
+    status: AdvisorStatus!
+    createdAt: String!
+    updatedAt: String!
+}
+
+enum AdvisorStatus {
+    ACTIVE
+    INACTIVE
+    ON_LEAVE
+}
+
+input AdvisorInput {
+    firstName: String!
+    lastName: String!
+    email: String!
+    phone: String!
+    specializations: [String!]!
+    status: AdvisorStatus!
+}
+
+type Query {
+    advisors: [Advisor!]!
+    advisor(id: ID!): Advisor
+    advisorsByStatus(status: AdvisorStatus!): [Advisor!]!
+}
+
+type Mutation {
+    createAdvisor(input: AdvisorInput!): Advisor!
+    updateAdvisor(id: ID!, input: AdvisorInput!): Advisor!
+    deleteAdvisor(id: ID!): Boolean!
+}

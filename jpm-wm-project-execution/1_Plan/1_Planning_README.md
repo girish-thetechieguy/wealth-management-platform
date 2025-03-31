@@ -10,7 +10,7 @@ The Investment Banking Platform is a modern, production-ready application design
 - [Testing](#testing)
 - [Deployment](#deployment)
 
-## Project Overview
+## Project Overview [Done]
 This wealth management project allows users to manage their investments, view portfolio performance, and receive insights. The backend is built using Java and Spring, exposing a GraphQL API, while the frontend is developed using React with TypeScript.
 
 ## Plan [Done]
@@ -32,7 +32,7 @@ This wealth management project allows users to manage their investments, view po
     - Users: `user_id`, `name`, `email`, `password`
     - Portfolios: `portfolio_id`, `user_id`, `total_value`
     - Investments: `investment_id`, `portfolio_id`, `asset_type`, `quantity`
-    - Transactions: `transaction_id`, `user_id`, `investment_id`, `date`, `amount`
+    - Transactions: `transaction_id`, `user_id`, `investment_id`, `date`, `amount` and many more
 
 ## Backend Development [In progress]
 1. **Setup Spring Boot Project**:
@@ -47,7 +47,7 @@ This wealth management project allows users to manage their investments, view po
 5. **MapStruct Integration**:
     - Use MapStruct for mapping between entity and DTO.
 
-## Frontend Development [Todo]
+## Frontend Development [In progress]
 1. **Setup React Project**:
     - Create a new React project with TypeScript; install dependencies (Tanstack Query, ag-Grid, Bootstrap).
 2. **Build Components**:
@@ -58,7 +58,7 @@ This wealth management project allows users to manage their investments, view po
 4. **Styling**:
     - Utilize Bootstrap for responsive design and styling.
 
-## Testing [Todo]
+## Testing  [Todo]
 1. **Unit Testing**:
     - Backend: Write unit tests using JUnit and Mockito for services and controllers.
     - Frontend: Write unit tests for React components using Jest and React Testing Library.
@@ -66,8 +66,9 @@ This wealth management project allows users to manage their investments, view po
     - Test the interaction between frontend and backend to ensure GraphQL functionality.
 3. **User Acceptance Testing (UAT)**:
     - Conduct UAT to gather feedback from potential users and make adjustments.
+4. Integrate all the services to jenkins CI CD pipeline and scan the code by sonarqube and other tools
 
-## Deployment [Todo]
+## Deployment to AWS cloud [Todo]
 1. **Prepare for Deployment**:
     - Backend: Package the Spring Boot application as a JAR file.
     - Frontend: Build the React application for production.
@@ -78,7 +79,7 @@ This wealth management project allows users to manage their investments, view po
 4. **Monitor and Maintain**:
     - Set up monitoring tools to track application performance and errors.
 
-## Stress Testing [Todo]
+## Stress Testing Jmeter/K6 [Todo]
 1. **Prepare postman with all the expected/exceptional behaviour of the website**:
     - Create the Scripts to run the Stress test.
 
