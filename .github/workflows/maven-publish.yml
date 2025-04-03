@@ -43,7 +43,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
   spc-config-server:
-    name: Build Module B
+    name: Build spc-config-server
     if: contains(github.event.head_commit.modified, 'spc-config-server/') || contains(github.event.head_commit.added, 'spc-config-server/')
     runs-on: ubuntu-latest
     permissions:
@@ -60,11 +60,11 @@ jobs:
           server-id: github
           settings-path: ${{ github.workspace }}
 
-      - name: Build Module B
+      - name: Build spc-config-server
         working-directory: ./spc-config-server
         run: mvn clean install
 
-      - name: Build and push Docker image (Module B)
+      - name: Build and push Docker image - spc-config-server
         working-directory: ./spc-config-server
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
