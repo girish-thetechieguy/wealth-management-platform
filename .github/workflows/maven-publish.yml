@@ -34,13 +34,12 @@ jobs:
       - name: Build and push Docker image - spc-service-registry
         working-directory: ./spc-service-registry
         uses: mr-smithers-excellent/docker-build-push@v5
-        with:
-          image: girishtechieguy/spc-service-registry
-          tags: latest
-          registry: docker.io
-          dockerfile: Dockerfile
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+        image: girishtechieguy/spc-service-registry
+        tags: latest
+        registry: docker.io
+        dockerfile: Dockerfile
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
 
   spc-config-server:
     name: Build spc-config-server
