@@ -4,8 +4,8 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'spc-service-registry/**'
-      - 'spc-config-server/**'
+      - '/spc-service-registry/**'
+      - '/spc-config-server/**'
       - 'pom.xml'
       - '.github/workflows/**'
 
