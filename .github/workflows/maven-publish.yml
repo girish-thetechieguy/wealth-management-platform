@@ -1,4 +1,5 @@
 name: Multi-Module CI/CD
+
 on:
   push:
     branches: [ main ]
@@ -32,14 +33,14 @@ jobs:
         run: mvn clean install
 
       - name: Build and push Docker image - spc-service-registry
-        working-directory: ./spc-service-registry
         uses: mr-smithers-excellent/docker-build-push@v5
-        image: girishtechieguy/spc-service-registry
-        tags: latest
-        registry: docker.io
-        dockerfile: Dockerfile
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+        with:
+          image: girishtechieguy/spc-service-registry
+          tags: latest
+          registry: docker.io
+          dockerfile: ./spc-service-registry/Dockerfile
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
   spc-config-server:
     name: Build spc-config-server
@@ -64,13 +65,12 @@ jobs:
         run: mvn clean install
 
       - name: Build and push Docker image - spc-config-server
-        working-directory: ./spc-config-server
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
           image: girishtechieguy/spc-config-server
           tags: latest
           registry: docker.io
-          dockerfile: Dockerfile
+          dockerfile: ./spc-config-server/Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
