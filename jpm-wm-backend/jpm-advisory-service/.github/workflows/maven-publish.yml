@@ -9,6 +9,25 @@ on:
       - pom.xml
       - .github/workflows/**
 jobs:
+  spc-service-registry-build:
+    name: Build spc-service-registry
+    runs-on: ubuntu-latest
+    if: contains(github.event.pull_request.changed_files, 'spc-service-registry/') || contains(github.event.head_commit.modified, 'spc-service-registry/')
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Build Service A
+        working-directory: ./service-a
+        run: mvn -B clean verify
+
+jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
