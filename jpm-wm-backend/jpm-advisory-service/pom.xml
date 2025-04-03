@@ -131,6 +131,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>jpm-advisory-service</finalName>
 	</build>
 
 </project>

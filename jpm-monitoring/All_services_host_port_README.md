@@ -11,6 +11,7 @@ Graphana
 Zipkin:  http://localhost:9411/zipkin/
 Jenkins :
 Docker image repo:
+Sonar Qube : http://localhost/9000
 
 ## Spring Cloud services
 Api gateway : http://localhost:8060

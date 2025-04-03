@@ -122,6 +122,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>jpm-client-service</finalName>
 	</build>
 
 </project>
