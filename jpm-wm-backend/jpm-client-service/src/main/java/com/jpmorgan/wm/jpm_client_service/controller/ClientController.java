@@ -6,13 +6,14 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 
 @RestController
-@RequestMapping("/client")
+@RequestMapping("/client/app/v1")
 @RequiredArgsConstructor
 public class ClientController {
 
@@ -21,7 +22,7 @@ public class ClientController {
     @Autowired
     private ClientService clientService;
 
-    @PostMapping("/register")
+    @PostMapping(value = "/register", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ClientDto> registerClient(@RequestBody ClientDto recordDto) {
         long startTime = System.currentTimeMillis();
         ClientDto createdRecord = clientService.createClient(recordDto);

@@ -21,9 +21,10 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
-        <module name="jpm-advisory-service" />
         <module name="kc-auth-service" />
+        <module name="jpm-advisory-service" />
         <module name="jpm-retirement-service" />
         <module name="jpm-education-service" />
         <module name="jpm-investment-service" />
