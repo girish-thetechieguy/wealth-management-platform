@@ -1,0 +1,5 @@
+spring:
+  application:
+   name: jpm-user-service
+  aop:
+    auto: true
