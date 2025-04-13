@@ -3,3 +3,7 @@ spring:
    name: jpm-user-service
   aop:
     auto: true
+  mvc:
+    async:
+      request-timeout: 30000
+
