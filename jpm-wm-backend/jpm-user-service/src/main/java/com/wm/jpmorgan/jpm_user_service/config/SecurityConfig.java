@@ -1,4 +1,4 @@
-package com.wm.jpmorgan.jpm_user_service.Config;
+package com.wm.jpmorgan.jpm_user_service.config;
 
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;

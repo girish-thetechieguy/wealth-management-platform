@@ -4,10 +4,14 @@ import com.netflix.graphql.dgs.DgsComponent;
 import com.netflix.graphql.dgs.DgsMutation;
 import com.netflix.graphql.dgs.DgsQuery;
 import com.netflix.graphql.dgs.InputArgument;
+import com.netflix.graphql.dgs.client.GraphQLError;
 import com.netflix.graphql.dgs.exceptions.DgsBadRequestException;
 import com.netflix.graphql.dgs.exceptions.DgsEntityNotFoundException;
 import com.wm.jpmorgan.jpm_user_service.model.UserProfile;
 import com.wm.jpmorgan.jpm_user_service.service.UserProfileService;
+import com.wm.jpmorgan.jpm_user_service.exception.*;
+import com.wm.jpmorgan.jpm_user_service.validation.UserProfileValidator;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,14 +30,23 @@ public class UserProfileController {
     @Autowired
     private UserProfileService userProfileService;
 
+    @Autowired
+    private UserProfileValidator userProfileValidator;
+
     @DgsQuery
     public List<UserProfile> getAllUsers() {
-        return userProfileService.getAllUsers();
+        try {
+            return userProfileService.getAllUsers();
+        } catch (Exception e) {
+            throw new ServiceUnavailableException("Failed to fetch users: " + e.getMessage());
+        }
     }
 
     @DgsQuery
     public UserProfile getUserById(@InputArgument String id) {
-        return userProfileService.getUserById(id);
+        userProfileValidator.validateId(id);
+        return userProfileService.getUserById(id)
+                .orElseThrow(() -> new NotFoundException("User not found with ID: " + id));
     }
 
 
@@ -43,6 +56,7 @@ public class UserProfileController {
             @InputArgument String email,
             @InputArgument int age,
             @InputArgument String address) {
+        userProfileValidator.validateCreate(name, email, age, address);
         return userProfileService.createUser(name, email, age, address);
     }
 
@@ -53,36 +67,17 @@ public class UserProfileController {
             @InputArgument String email,
             @InputArgument Integer age,
             @InputArgument String address) {
-        return userProfileService.updateUser(id, name, email, age, address);
+        userProfileValidator.validateUpdate(id, name, email, age, address);
+        return userProfileService.updateUser(id, name, email, age, address)
+                .orElseThrow(() -> new NotFoundException("User not found with ID: " + id));
     }
 
     @DgsMutation
     public Boolean deleteUser(@InputArgument String id) {
-        return userProfileService.deleteUser(id);
-    }
-
-    @DgsExceptionHandler
-    public ResponseEntity<Map<String, Object>> handleException(Exception ex) {
-        HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
-        Map<String, Object> body = new LinkedHashMap<>();
-
-        if (ex instanceof DgsEntityNotFoundException) {
-            status = HttpStatus.NOT_FOUND;
-            body.put("message", ex.getMessage());
+        userProfileValidator.validateId(id);
+        if (!userProfileService.deleteUser(id)) {
+            throw new NotFoundException("User not found with ID: " + id);
         }
-        else if (ex instanceof DgsBadRequestException) {
-            status = HttpStatus.BAD_REQUEST;
-            body.put("error", ex.getMessage());
-        }
-        else if (ex instanceof SecurityException) {
-            status = HttpStatus.UNAUTHORIZED;
-            body.put("error", "Authentication failed");
-            body.put("details", ex.getMessage());
-        }
-
-        body.put("timestamp", new Date());
-        body.put("status", status.value());
-
-        return new ResponseEntity<>(body, status);
+        return true;
     }
 }
