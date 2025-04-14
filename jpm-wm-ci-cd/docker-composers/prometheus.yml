@@ -1,0 +1,12 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'spring-app'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['host.docker.internal:8080'] # My JPM services
+
+  - job_name: 'mongodb'
+    static_configs:
+      - targets: ['mongodb:27017']

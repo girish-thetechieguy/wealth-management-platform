@@ -1,5 +1,6 @@
 package com.wm.jpmorgan.jpm_user_service.service;
 
+import com.wm.jpmorgan.jpm_user_service.exception.NotFoundException;
 import com.wm.jpmorgan.jpm_user_service.model.UserProfile;
 import com.wm.jpmorgan.jpm_user_service.repository.UserProfileRepository;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +24,7 @@ public class UserProfileService {
 
     public UserProfile getUserById(String id) {
         return userProfileRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new NotFoundException("User not found with ID: " + id));
     }
 
     public UserProfile createUser(String name, String email, int age, String address) {
@@ -31,12 +32,20 @@ public class UserProfileService {
         return userProfileRepository.save(user);
     }
 
-    public UserProfile updateUser(String id, String name, String email, Integer age, String address) {
-        UserProfile user = getUserById(id);
+    public UserProfile updateUser(
+            String id,
+            String name,
+            String email,
+            Integer age,
+            String address
+    ) {
+        UserProfile user = userProfileRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("User not found"));
         if (name != null) user.setName(name);
         if (email != null) user.setEmail(email);
         if (age != null) user.setAge(age);
         if (address != null) user.setAddress(address);
+
         return userProfileRepository.save(user);
     }
 
