@@ -24,12 +24,14 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: admin
     ports:
       - "27017:27017"
     volumes:
       - mongodb_data:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
     healthcheck:
-      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      test: [ "CMD", "mongosh", "--eval", "db.adminCommand('ping')", "-u", "root", "-p", "example123", "--authenticationDatabase", "admin" ]
       interval: 10s
       timeout: 5s
       retries: 5
