@@ -4,8 +4,14 @@ spring:
   config:
     import: vault://
   cloud:
-    bootstrap:
-      enabled: true
+    vault:
+      uri: http://localhost:8200
+      token: myroot
+      kv:
+        enabled: true
+        backend: secret
+        application-name: dev/user-service/mongodb
+      fail-fast: true
   application:
    name: jpm-user-service
   aop:
