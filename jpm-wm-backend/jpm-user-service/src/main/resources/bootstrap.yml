@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: jpm-user-service
+  
+  cloud:
+    vault:
+      uri: http://localhost:8200
+      token: myroot
+      kv:
+        enabled: true
+        backend: secret
+        application-name: show/dev/user-service/mongodb
+      fail-fast: true
+
+  config:
+    import: vault://  # Must be present

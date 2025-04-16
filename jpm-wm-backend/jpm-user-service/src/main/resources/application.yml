@@ -1,6 +1,11 @@
 server:
   port: 7999
 spring:
+  config:
+    import: vault://
+  cloud:
+    bootstrap:
+      enabled: true
   application:
    name: jpm-user-service
   aop:
@@ -10,4 +15,4 @@ spring:
       request-timeout: 30000
   data:
     mongodb:
-      uri: mongodb://root:root@localhost:27017/mongodb
+      uri: mongodb://${db-user}:${db-password}@${domain}/${db-name}?authSource=${db-name}&retryWrites=true&w=majority
