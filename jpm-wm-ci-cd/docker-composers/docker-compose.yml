@@ -19,7 +19,7 @@ services:
 
   # 2. MongoDB (Database)
   mongodb:
-    image: mongo:6.0
+    image: mongodb/mongodb-community-server:latest
     container_name: mongodb
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
@@ -31,7 +31,7 @@ services:
       - mongodb_data:/data/db
       - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
     healthcheck:
-      test: [ "CMD", "mongosh", "--eval", "db.adminCommand('ping')", "-u", "root", "-p", "example123", "--authenticationDatabase", "admin" ]
+      test: [ "CMD", "mongosh", "--eval", "db.adminCommand('ping')", "-u", "root", "-p", "root", "--authenticationDatabase", "admin" ]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -157,7 +157,7 @@ services:
 
   # 10 : Vault service
   vault:
-    image: vault:1.13.3
+    image: vault:1.12.7
     container_name: vault
     environment:
       VAULT_DEV_ROOT_TOKEN_ID: "myroot"
