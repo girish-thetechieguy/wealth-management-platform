@@ -1,5 +1,6 @@
 package com.wm.jpmorgan.jpm_user_service.model;
 
+import com.wm.jpmorgan.jpm_user_service.constant.UserServiceConstants;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,22 +14,23 @@ import javax.validation.constraints.*;
 @AllArgsConstructor
 public class UserProfile {
     @Id
-    @NotBlank(message = "ID cannot be blank")
-    @Pattern(regexp = "^[a-fA-F0-9]{24}$", message = "Invalid ID format")
+    @NotBlank(message = UserServiceConstants.ID_BLANK_ERROR)
+    @Pattern(regexp = "^[a-fA-F0-9]{24}$", message = UserServiceConstants.INVALID_ID_FORMAT)
     private String id;
 
-    @NotBlank(message = "Name cannot be blank")
-    @Size(min = 2, max = 50, message = "Name must be between 2-50 characters")
+    @NotBlank(message = UserServiceConstants.NAME_CANNOT_BLANK)
+    @Size(min = 2, max = 50, message = UserServiceConstants.NAME_LIMIT_ERROR)
     private String name;
 
-    @Email(message = "Email should be valid")
-    @NotBlank(message = "Email cannot be blank")
+    @Email(message = UserServiceConstants.VALID_EMAIL_ERROR)
+    @NotBlank(message = UserServiceConstants.BLANK_EMAIL_ERROR)
+    @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", message = UserServiceConstants.INVALID_ID_FORMAT)
     private String email;
 
-    @Min(value = 18, message = "Age must be at least 18")
-    @Max(value = 120, message = "Age must be less than 120")
+    @Min(value = 18, message = UserServiceConstants.AGE_MIN_LIMIT_ERROR)
+    @Max(value = 120, message = UserServiceConstants.AGE_MAX_LIMIT_ERROR)
     private int age;
 
-    @Size(max = 200, message = "Address cannot exceed 200 characters")
+    @Size(max = 200, message = UserServiceConstants.ADDRESS_LIMIT_ERROR)
     private String address;
 }

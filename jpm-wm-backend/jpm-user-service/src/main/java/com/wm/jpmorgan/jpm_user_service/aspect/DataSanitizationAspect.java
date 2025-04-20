@@ -1,5 +1,6 @@
 package com.wm.jpmorgan.jpm_user_service.aspect;
 
+import com.wm.jpmorgan.jpm_user_service.constant.UserServiceConstants;
 import jakarta.servlet.http.HttpServletRequest;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -23,7 +24,7 @@ public class DataSanitizationAspect {
             String[] sanitizedValues = Arrays.stream(values)
                     .map(value -> Jsoup.clean(value, Safelist.basic()))
                     .toArray(String[]::new);
-            request.setAttribute("sanitized_" + key, sanitizedValues);
+            request.setAttribute(UserServiceConstants.SANITIZED + key, sanitizedValues);
         });
     }
 }

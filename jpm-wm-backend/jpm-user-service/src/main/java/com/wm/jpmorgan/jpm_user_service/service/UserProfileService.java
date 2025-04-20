@@ -1,5 +1,6 @@
 package com.wm.jpmorgan.jpm_user_service.service;
 
+import com.wm.jpmorgan.jpm_user_service.constant.UserServiceConstants;
 import com.wm.jpmorgan.jpm_user_service.exception.NotFoundException;
 import com.wm.jpmorgan.jpm_user_service.model.UserProfile;
 import com.wm.jpmorgan.jpm_user_service.repository.UserProfileRepository;
@@ -24,7 +25,7 @@ public class UserProfileService {
 
     public UserProfile getUserById(String id) {
         return userProfileRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException("User not found with ID: " + id));
+                .orElseThrow(() -> new NotFoundException(UserServiceConstants.USER_NOT_FOUND + id));
     }
 
     public UserProfile createUser(String name, String email, int age, String address) {

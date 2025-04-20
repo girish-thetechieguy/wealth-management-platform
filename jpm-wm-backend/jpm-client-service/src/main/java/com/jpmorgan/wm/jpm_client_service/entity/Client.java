@@ -16,10 +16,7 @@ import java.time.LocalDateTime;
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @Table(name = "client")
-public class ClientRecord {
-
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "client_seq_generator")

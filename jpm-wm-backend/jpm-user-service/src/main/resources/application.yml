@@ -1,6 +1,8 @@
 server:
   port: 7999
 spring:
+  application:
+    name: jpm-user-service
   config:
     import: vault://
   cloud:
@@ -12,8 +14,6 @@ spring:
         backend: secret
         application-name: dev/user-service/mongodb
       fail-fast: true
-  application:
-   name: jpm-user-service
   aop:
     auto: true
   mvc:

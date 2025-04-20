@@ -4,11 +4,12 @@ import com.netflix.graphql.dgs.DgsComponent;
 import com.netflix.graphql.dgs.DgsMutation;
 import com.netflix.graphql.dgs.DgsQuery;
 import com.netflix.graphql.dgs.InputArgument;
+import com.wm.jpmorgan.jpm_user_service.constant.UserServiceConstants;
 import com.wm.jpmorgan.jpm_user_service.exception.NotFoundException;
 import com.wm.jpmorgan.jpm_user_service.exception.ServiceUnavailableException;
 import com.wm.jpmorgan.jpm_user_service.model.UserProfile;
 import com.wm.jpmorgan.jpm_user_service.service.UserProfileService;
-import com.wm.jpmorgan.jpm_user_service.validation.UserProfileValidator;
+import com.wm.jpmorgan.jpm_user_service.validator.UserProfileValidator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -29,14 +30,14 @@ public class UserProfileController {
         try {
             return userProfileService.getAllUsers();
         } catch (Exception e) {
-            throw new ServiceUnavailableException("Failed to fetch users: " + e.getMessage());
+            throw new ServiceUnavailableException(UserServiceConstants.FAILED_FETCH_USER + e.getMessage());
         }
     }
 
     @DgsQuery
     public UserProfile getUserById(@InputArgument String id) {
         userProfileValidator.validateId(id);
-        return userProfileService.getUserById(id); // Service already throws
+        return userProfileService.getUserById(id);
     }
 
 
@@ -65,7 +66,7 @@ public class UserProfileController {
     public Boolean deleteUser(@InputArgument String id) {
         userProfileValidator.validateId(id);
         if (!userProfileService.deleteUser(id)) {
-            throw new NotFoundException("User not found with ID: " + id);
+            throw new NotFoundException(UserServiceConstants.USER_NOT_FOUND + id);
         }
         return true;
     }

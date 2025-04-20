@@ -1,4 +1,4 @@
-package com.wm.jpmorgan.jpm_user_service.validation;
+package com.wm.jpmorgan.jpm_user_service.validator;
 
 import com.wm.jpmorgan.jpm_user_service.exception.BadRequestException;
 import com.wm.jpmorgan.jpm_user_service.exception.FailedPreconditionException;
